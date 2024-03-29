@@ -23,15 +23,15 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(
-  cors({
-    
-    methods: ["POST", "GET"],
-    credentials: true,
+// app.use(
+//   cors({
+//     origin: ["https://chats-bharat-cb-client.vercel.app/"],
+//     methods: ["POST", "GET"],
+//     credentials: true,
     
 
-  })
-);
+//   })
+// );
 
 async function getUserDataFromRequest(req) {
   return new Promise((resolve, reject) => {
