@@ -23,7 +23,7 @@ export default function Chat() {
   }, []);
 
   function connectToWs() {
-    const ws = new WebSocket("ws://https://chats-bharat-api.vercel.app/");
+    const ws = new WebSocket("wss://https://chats-bharat-api.vercel.app/");
     setWs(ws);
     ws.addEventListener("message", handleMessage);
     ws.addEventListener("close", () => {
