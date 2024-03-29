@@ -6,7 +6,7 @@ import Routes from "./Routes";
 
 
 function App() {
-  axios.defaults.baseURL = 'http://localhost:4040';
+  axios.defaults.baseURL = 'https://chats-bharat-api.vercel.app/';
   axios.defaults.withCredentials = true;
  
   return (
