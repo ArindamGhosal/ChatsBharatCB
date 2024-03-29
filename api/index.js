@@ -25,7 +25,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: ["https://chats-bharat-cb-client.vercel.app/"],
+    
     methods: ["POST", "GET"],
     credentials: true,
     
