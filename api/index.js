@@ -16,7 +16,7 @@ const bcryptSalt = bcrypt.genSaltSync(10);
 const app = express();
 app.use(
   cors({
-    origin: ["https://chats-bharat-frontend.vercel.app/"],
+    origin: ["https://chats-bharat-frontend.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true,
   })
