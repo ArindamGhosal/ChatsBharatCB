@@ -10,28 +10,30 @@ const Message = require("./models/Message");
 const ws = require("ws");
 const fs = require("fs");
 
-dotenv.config();
-mongoose.connect(process.env.MONGO_URL, (err) => {
-  if (err) throw err;
-});
 
 const jwtSecret = process.env.JWT_SECRET;
 const bcryptSalt = bcrypt.genSaltSync(10);
 
 const app = express();
-app.use("/uploads", express.static(__dirname + "/uploads"));
-app.use(express.json());
-app.use(cookieParser());
-
 app.use(
   cors({
     origin: ["https://chats-bharat-cb-client.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true,
-    
-
   })
 );
+app.use(express.json());
+app.use(cookieParser());
+dotenv.config();
+mongoose.connect(process.env.MONGO_URL, (err) => {
+  if (err) throw err;
+});
+
+app.use("/uploads", express.static(__dirname + "/uploads"));
+
+
+
+
 
 async function getUserDataFromRequest(req) {
   return new Promise((resolve, reject) => {
@@ -49,7 +51,7 @@ async function getUserDataFromRequest(req) {
 }
 
 app.get("/", (req, res) => {
-  res.json("test ok");
+  res.json("Hello");
 });
 
 app.get("/messages/:userId", async (req, res) => {
