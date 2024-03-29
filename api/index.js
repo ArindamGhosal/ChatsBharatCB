@@ -10,14 +10,13 @@ const Message = require("./models/Message");
 const ws = require("ws");
 const fs = require("fs");
 
-
 const jwtSecret = process.env.JWT_SECRET;
 const bcryptSalt = bcrypt.genSaltSync(10);
 
 const app = express();
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: ["https://chats-bharat-frontend.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true,
   })
@@ -30,10 +29,6 @@ mongoose.connect(process.env.MONGO_URL, (err) => {
 });
 
 app.use("/uploads", express.static(__dirname + "/uploads"));
-
-
-
-
 
 async function getUserDataFromRequest(req) {
   return new Promise((resolve, reject) => {
