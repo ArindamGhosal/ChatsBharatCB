@@ -28,6 +28,8 @@ app.use(
     origin: ["https://chats-bharat-cb-client.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true,
+    
+
   })
 );
 
