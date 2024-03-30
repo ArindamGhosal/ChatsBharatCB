@@ -6,7 +6,7 @@ import Routes from "./Routes";
 
 
 function App() {
-  axios.defaults.baseURL = 'http://localhost:4040';
+  axios.defaults.baseURL = 'https://chatsbharatcb.onrender.com/';
   axios.defaults.withCredentials = true;
  
   return (

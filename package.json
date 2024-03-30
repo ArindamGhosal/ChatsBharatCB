@@ -1,0 +1,8 @@
+{
+  "name": "ChatsBharat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ArindamGhosal/ChatsBharatCB.git",
+  "author": "20051768 <20051768@kiit.ac.in>",
+  "license": "MIT"
+}
