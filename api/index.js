@@ -1,3 +1,4 @@
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
@@ -9,6 +10,10 @@ const User = require("./models/User");
 const Message = require("./models/Message");
 const ws = require("ws");
 const fs = require("fs");
+
+
+
+
 
 const jwtSecret = process.env.JWT_SECRET;
 const bcryptSalt = bcrypt.genSaltSync(10);
@@ -29,6 +34,11 @@ mongoose.connect(process.env.MONGO_URL, (err) => {
 });
 
 app.use("/uploads", express.static(__dirname + "/uploads"));
+
+
+
+
+
 
 async function getUserDataFromRequest(req) {
   return new Promise((resolve, reject) => {
@@ -134,7 +144,6 @@ app.post("/register", async (req, res) => {
 });
 
 const server = app.listen(4040);
-
 
 const wss = new ws.WebSocketServer({ server });
 wss.on("connection", (connection, req) => {
