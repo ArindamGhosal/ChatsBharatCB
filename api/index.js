@@ -16,7 +16,7 @@ const bcryptSalt = bcrypt.genSaltSync(10);
 const app = express();
 app.use(
   cors({
-    origin: ["https://chats-bharat-frontend.vercel.app"],
+    origin: process.env.CLIENT_URL,
     methods: ["POST", "GET"],
     credentials: true,
   })
@@ -133,7 +133,8 @@ app.post("/register", async (req, res) => {
   }
 });
 
-const server = app.listen('https://chats-bharat-api.vercel.app/');
+const server = app.listen(4040);
+
 
 const wss = new ws.WebSocketServer({ server });
 wss.on("connection", (connection, req) => {
